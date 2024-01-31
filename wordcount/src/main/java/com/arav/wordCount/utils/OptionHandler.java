@@ -27,8 +27,9 @@ public class OptionHandler {
     }
     public int getLineCount(){
         int lineCount = 1;
-        for (byte b : fileContents) {
-            if (b == LINE_BREAK) {
+        for(int i=0;i<fileContents.length;i++){
+            byte b = fileContents[i];
+            if (b == LINE_BREAK && i != fileContents.length - 1) {
                 lineCount++;
             }
         }
